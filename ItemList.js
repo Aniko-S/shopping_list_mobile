@@ -1,11 +1,12 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View } from "react-native";
+import OneItem from "./OneItem";
 
 function ItemList({ items }) {
   return (
     <View>
       {items.map((item, index) => (
-        <Text key={index}>{item}</Text>
+        <OneItem key={index} item={item} />
       ))}
     </View>
   );
