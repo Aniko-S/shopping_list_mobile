@@ -3,9 +3,16 @@ import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { Text, Input, Button } from "react-native-elements";
+import ItemList from "./ItemList";
 
 export default function App() {
   const [text, setText] = useState("");
+  const [items, setItems] = useState([]);
+
+  const addNewItem = (text) => {
+    setItems((items) => [text, ...items]);
+    setText("");
+  };
 
   return (
     <SafeAreaProvider>
@@ -16,7 +23,8 @@ export default function App() {
           onChangeText={(text) => setText(text)}
           defaultValue={text}
         />
-        <Button title="Add" />
+        <Button title="Add" onPress={() => addNewItem(text)} />
+        <ItemList items={items} />
       </View>
     </SafeAreaProvider>
   );
