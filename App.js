@@ -50,7 +50,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    padding: 25,
+    paddingVertical: 25,
+    paddingHorizontal: 15,
   },
   line: {
     display: "flex",
@@ -60,7 +61,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   input: {
-    width: "80%",
+    width: "85%",
     fontSize: 20,
     borderWidth: 1,
     borderColor: "grey",
