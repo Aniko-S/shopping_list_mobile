@@ -1,13 +1,19 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { Text } from "react-native-elements";
 
 export default function App() {
+  const [text, setText] = useState("");
+
   return (
-    <View style={styles.container}>
-      <Text>Shopping list</Text>
+    <SafeAreaProvider>
+      <View style={styles.container}>
+        <Text h1>Shopping list</Text>
       <StatusBar style="auto" />
-    </View>
+      </View>
+    </SafeAreaProvider>
   );
 }
 
@@ -16,6 +22,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center",
+    padding: 25,
   },
 });
