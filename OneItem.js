@@ -1,14 +1,9 @@
 import React, { useState } from "react";
 import { CheckBox } from "react-native-elements";
 
-function OneItem({ item }) {
-  const [checked, setChecked] = useState(false);
+function OneItem({ item, handlePress }) {
   return (
-    <CheckBox
-      title={item}
-      onPress={() => setChecked((checked) => !checked)}
-      checked={checked}
-    />
+    <CheckBox title={item.text} onPress={handlePress} checked={item.bought} />
   );
 }
 

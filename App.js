@@ -8,10 +8,18 @@ import ItemList from "./ItemList";
 export default function App() {
   const [text, setText] = useState("");
   const [items, setItems] = useState([]);
+  const [id, setId] = useState(0);
 
   const addNewItem = (text) => {
-    setItems((items) => [text, ...items]);
+    setId((id) => id + 1);
+    setItems((items) => [{ id, text, bought: false }, ...items]);
     setText("");
+  };
+
+  const check = (id) => {
+    let checkedItem = items.find((item) => item.id === id);
+    checkedItem.bought = !checkedItem.bought;
+    setItems([...items]);
   };
 
   return (
@@ -24,7 +32,7 @@ export default function App() {
           defaultValue={text}
         />
         <Button title="Add" onPress={() => addNewItem(text)} />
-        <ItemList items={items} />
+        <ItemList items={items} handlePress={check} />
       </View>
     </SafeAreaProvider>
   );
