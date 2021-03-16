@@ -1,8 +1,7 @@
-import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import { StyleSheet, View, TextInput } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { Text, Input, Button } from "react-native-elements";
+import { Text, Button } from "react-native-elements";
 import ItemList from "./ItemList";
 
 export default function App() {
