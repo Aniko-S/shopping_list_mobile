@@ -1,10 +1,10 @@
 import React from "react";
-import { View } from "react-native";
+import { View, StyleSheet } from "react-native";
 import OneItem from "./OneItem";
 
 function ItemList({ items, handlePress }) {
   return (
-    <View>
+    <View style={styles.list}>
       {items
         .sort((item1, item2) => {
           if (item1.bought && !item2.bought) return 1;
@@ -23,3 +23,11 @@ function ItemList({ items, handlePress }) {
 }
 
 export default ItemList;
+
+const styles = StyleSheet.create({
+  list: {
+    display: "flex",
+    alignItems: "center",
+    width: "100%",
+  },
+});
