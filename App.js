@@ -22,6 +22,10 @@ export default function App() {
     setItems([...items]);
   };
 
+  const deleteItem = (id) => {
+    setItems((items) => items.filter((item) => item.id !== id));
+  };
+
   return (
     <SafeAreaProvider>
       <View style={styles.container}>
@@ -35,7 +39,7 @@ export default function App() {
           />
           <Button title="Add" onPress={() => addNewItem(text)} />
         </View>
-        <ItemList items={items} handlePress={check} />
+        <ItemList items={items} handlePress={check} deleteItem={deleteItem} />
       </View>
     </SafeAreaProvider>
   );
